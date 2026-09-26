@@ -23,7 +23,7 @@
 ## 验证
 
 ```sh
-./mvnw -pl image-toolkit -am -Dtest=ColorFidelityTest,DitherAlgorithmTest -Dsurefire.failIfNoSpecifiedTests=false test
+./mvnw -Dtest=ColorFidelityTest,DitherAlgorithmTest -Dsurefire.failIfNoSpecifiedTests=false test
 ```
 
 `ColorFidelityTest` 覆盖暖色平均线性颜色、灰阶、近中性色颗粒、蓝天色相、纯墨水色、量化/预览分离、校准色域随机采样、非法调色板，以及暖色互补点抑制、2000 个混色重建样本、单像素边缘、渐变局部色调和确定性。暖色色块与映射后蓝色色块每通道平均线性误差要求小于 `0.015`，不等同于面板实测色差。

@@ -1,13 +1,13 @@
-# image-toolkit 抖动与 BIN 转换演示
+# image-ink-tool 抖动与 BIN 转换演示
 
-本目录包含若干可直接运行的 `main` 方法演示，帮助理解 `image-toolkit` 的用法。
+本目录包含若干可直接运行的 `main` 方法演示，帮助理解 `image-ink-tool` 的用法。
 
 ## 运行方式
 
 在 IDE 中直接运行对应类的 `main` 方法，或在项目根目录执行：
 
 ```bash
-./mvnw -pl image-toolkit test-compile exec:java \
+./mvnw test-compile exec:java \
   -Dexec.mainClass="com.mopai.toolkit.image.dither.demo.BasicDitherDemo" \
   -Dexec.classpathScope=test
 ```
@@ -24,7 +24,7 @@
 
 ## 输出位置
 
-所有演示结果默认保存在系统临时目录下的 `image-toolkit-demos/` 文件夹中：
+所有演示结果默认保存在系统临时目录下的 `image-ink-tool-demos/` 文件夹中：
 
-- macOS/Linux: `/tmp/image-toolkit-demos/`
-- Windows: `%TEMP%\image-toolkit-demos\`
+- macOS/Linux: `/tmp/image-ink-tool-demos/`
+- Windows: `%TEMP%\image-ink-tool-demos\`

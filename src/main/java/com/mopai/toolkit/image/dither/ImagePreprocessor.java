@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 /**
  * 在六色量化前提升中间调和阴影，并以自然饱和度增强有色区域。
  * <p>
- * 移植自 mopai_album_android (ImagePreprocessor.kt)：
+ * 核心优化特性：
  * - 曝光调整有上限，高光使用软肩曲线；
  * - 黑色和低彩度区域不会被强行染色；
  * - 自带肤色保护，避免人像面部过度泛红或泛黄。
