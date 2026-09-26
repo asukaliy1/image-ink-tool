@@ -101,30 +101,31 @@ System.out.printf("BIN 转换就绪，大小: %d 字节, 分辨率: %dx%d\n",
 ./mvnw clean install
 ```
 
-### 发布到远程私有 Maven 仓库（如 CODING / 阿里云效 / 私有 Nexus）
+### 发布到 Maven 仓库
+
+#### 方式一：GitHub Packages（内置支持，推送 Tag 自动构建）
+本项目配置了 GitHub Actions 自动化工作流。只需打 Tag 并推送至 GitHub，Actions 会自动构建并发布到 GitHub Packages：
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+#### 方式二：发布到企业私有 Maven 仓库（如 CODING / 阿里云效 / 私有 Nexus）
 
 在 `~/.m2/settings.xml` 中配置私库认证服务器：
 ```xml
 <servers>
   <server>
-    <id>mopai-releases</id>
-    <username>your-username</username>
-    <password>your-password-or-token</password>
-  </server>
-  <server>
-    <id>mopai-snapshots</id>
+    <id>my-maven-releases</id>
     <username>your-username</username>
     <password>your-password-or-token</password>
   </server>
 </servers>
 ```
 
-配置环境变量并执行发布：
+构建并部署到指定私服：
 ```bash
-export MAVEN_REPO_RELEASE_URL="https://your-nexus-or-coding-domain/repository/maven-releases/"
-export MAVEN_REPO_SNAPSHOT_URL="https://your-nexus-or-coding-domain/repository/maven-snapshots/"
-
-./mvnw clean deploy -DskipTests
+./mvnw clean deploy -DaltDeploymentRepository=my-maven-releases::default::https://your-maven-repo-url/
 ```
 
 ---

@@ -110,17 +110,17 @@
         </plugins>
     </build>
 
-    <!-- 分发管理：支持通过环境变量或 settings.xml 配置私有仓库 URL 与鉴权 -->
+    <!-- 分发管理：配置 GitHub Packages 与通用私服 -->
     <distributionManagement>
         <repository>
-            <id>mopai-releases</id>
-            <name>Mopai Releases Repository</name>
-            <url>${env.MAVEN_REPO_RELEASE_URL}</url>
+            <id>github</id>
+            <name>GitHub asukaliy1 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/asukaliy1/image-ink-tool</url>
         </repository>
         <snapshotRepository>
-            <id>mopai-snapshots</id>
-            <name>Mopai Snapshots Repository</name>
-            <url>${env.MAVEN_REPO_SNAPSHOT_URL}</url>
+            <id>github</id>
+            <name>GitHub asukaliy1 Apache Maven Packages Snapshots</name>
+            <url>https://maven.pkg.github.com/asukaliy1/image-ink-tool</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
