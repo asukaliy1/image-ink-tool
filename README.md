@@ -2,7 +2,7 @@
 
 [![Java](https://img.shields.io/badge/Java-1.8%2B-blue.svg)](https://www.oracle.com/java/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-asukaliy1%2Fimage--ink--tool-181717?logo=github)](https://github.com/asukaliy1/image-ink-tool)
-[![Version](https://img.shields.io/badge/Version-1.0.0-orange.svg)](pom.xml)
+[![JitPack](https://jitpack.io/v/asukaliy1/image-ink-tool.svg)](https://jitpack.io/#asukaliy1/image-ink-tool)
 
 `image-ink-tool` 是专为低色数反射式电子墨水屏（E-ink / E-paper）量身打造的高性能图像处理工具包。提供多色空间色彩量化、空间误差扩散抖动、多通道墨水覆盖率分解、暗部与肤色保护预处理，以及面向硬件芯片的专有 BIN 格式流转换。
 
@@ -25,16 +25,42 @@
 
 ---
 
-## 📦 Maven 依赖引入
+## 📦 依赖引入（JitPack 免鉴权开箱即用）
 
-在消费工程（如 `mopai` 或 `mqtt_album`）的 `pom.xml` 中引入：
+本项目已发布至 JitPack，**任何开发者均可直接引入，无需 GitHub 账号或 Token**：
+
+### 1. Maven
+
+在 `pom.xml` 中添加 JitPack 仓库与依赖：
 
 ```xml
-<dependency>
-    <groupId>com.mopai.toolkit</groupId>
-    <artifactId>image-ink-tool</artifactId>
-    <version>1.0.0</version>
-</dependency>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.asukaliy1</groupId>
+        <artifactId>image-ink-tool</artifactId>
+        <version>v1.0.0</version>
+    </dependency>
+</dependencies>
+```
+
+### 2. Gradle
+
+```groovy
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.asukaliy1:image-ink-tool:v1.0.0'
+}
 ```
 
 ---
