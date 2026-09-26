@@ -45,7 +45,7 @@
     <dependency>
         <groupId>com.github.asukaliy1</groupId>
         <artifactId>image-ink-tool</artifactId>
-        <version>v1.0.0</version>
+        <version>v1.0.1</version>
     </dependency>
 </dependencies>
 ```
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.asukaliy1:image-ink-tool:v1.0.0'
+    implementation 'com.github.asukaliy1:image-ink-tool:v1.0.1'
 }
 ```
 
